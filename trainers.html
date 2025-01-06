@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Trainers</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Our Fitness Center</title>
+        <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    </head>
+    <body>
+    
+
+    
+        <!-- Navbar -->
+        <nav>
+            <!-- Logo Section -->
+            <div class="logo-container">
+                <a href="{{ url_for('index') }}"> <img src="{{ url_for('static', filename='image/logo.jpg') }}" alt="Fitness Center Logo" class="logo"> </a>
+            </div>
+    
+            <!-- Navbar Links -->
+            <ul>
+            
+                <li><a href="{{ url_for('about') }}">About Us</a></li>
+                <li><a href="{{ url_for('trainers') }}">Trainers</a></li>
+                <li><a href="{{ url_for('schedule') }}">Class Schedule</a></li>
+                <li><a href="{{ url_for('contact') }}">Contact Us</a></li>
+            </ul>
+        </nav>
+    
+       <!-- Cover Section with Fixed Background -->
+       <section class="cover-section">
+        <div class="background-image">
+            <div class="overlay">
+            <h1>Meet Our Expert Trainers</h1>
+            <p>Strength. Discipline. Confidence.</p>
+            <div class="cta-buttons">
+                <a href="tel:+16463312876" class="cta-button">Call Us Now</a>
+                <a href="{{ url_for('contact') }}" class="cta-button signup">Sign Up</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Instructors Section -->
+    <section class="instructors-section">
+        <div class="container">
+            <h2>Our Expert Trainers</h2>
+            <div class="trainer-container">
+                <!-- Instructor 1 -->
+                <div class="trainer-profile">
+                    <img src="{{ url_for('static', filename='image/founder.jpg') }}" alt="Instructor 1" class="trainer-photo">
+                    <h3>Sunil Lama</h3>
+                    <p><strong>Founder & Chief Instructor</strong></p>
+                    <p>With over 20 years of martial arts experience, Sunil has dedicated his life to mastering Karate and teaching it to others. A true champion both in and out of the dojo.</p>
+                    <a href="{{ url_for('contact') }}" class="contact-button">Contact Sunil</a>
+                </div>
+
+        
+            </div>
+        </div>
+    </section>
+
+    <!-- Social Media Section -->
+    <section class="social-media-section">
+        <div class="container">
+            <h2>Follow Us</h2>
+            <p>Stay connected with us on social media for updates, events, and more!</p>
+            <div class="social-links">
+                <a href="https://www.facebook.com/p/Champion-Martial-Arts-Club-USA-100063560977563/" target="_blank" class="social-link facebook">Facebook</a>
+                <a href="https://www.instagram.com/cmacusa21/" target="_blank" class="social-link instagram">Instagram</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer Section -->
+    <footer>
+        <div class="footer-container">
+            <div class="footer-section">
+                <h3>Master martial arts and fitness in Queens, New York</h3>
+                <img src="{{ url_for('static', filename='image/logo.jpg') }}" alt="Logo" class="logo">
+            </div>
+            <div class="footer-section">
+                <h4>Get In Touch</h4>
+                <p><strong>Phone:</strong> (646) 331-2876 </p>
+                <p><strong>Email:</strong> cmacusa21@gmail.com</p>
+                <p><strong>Address:</strong> 43-20 69th St, Queens, NY 11377</p>
+            </div>
+            <div class="footer-section">
+                <h4>Quicklinks</h4>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="trainers.html">Our Trainers</a></li>
+                    <li><a href="schedule.html">Class Schedule</a></li>
+                    <li><a href="contact.html">Contact Us</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h4>Open Hours</h4>
+                <p>Monday, Wednesday & Friday: 4:00PM - 5:00PM</p>
+                <p>Tuesday & Thursday: 4:00PM - 6:00PM</p>
+                <p>Saturday: 9:30AM - 12:00PM </p>
+                <p>Sunday: 11:00AM – 1:00PM</p>
+            </div>
+        </div>
+    </footer>
+
+</body>
+</html>

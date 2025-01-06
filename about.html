@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us - Champion Martial Arts Club</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <nav>
+        <!-- Logo Section -->
+        <div class="logo-container">
+            <a href="{{ url_for('index') }}"> <img src="{{ url_for('static', filename='image/logo.jpg') }}" alt="Fitness Center Logo" class="logo"> </a>
+        </div>
+
+        <!-- Navbar Links -->
+        <ul>
+        
+            <li><a href="{{ url_for('about') }}">About Us</a></li>
+            <li><a href="{{ url_for('trainers') }}">Trainers</a></li>
+            <li><a href="{{ url_for('schedule') }}">Class Schedule</a></li>
+            <li><a href="{{ url_for('contact') }}">Contact Us</a></li>
+        </ul>
+    </nav>
+
+
+    <!-- About Us Section with Background Image -->
+    <section class="about-us">
+        <div class="background-image">
+            <div class="overlay">
+                <h1>Welcome to Champion Martial Arts Club</h1>
+                <p>We empower students with strength, discipline, and self-confidence.</p>
+                <div class="cta-buttons">
+                    <a href="tel:+16463312876" class="cta-button">Call Us Now</a>
+                    <a href="{{ url_for('contact') }}" class="cta-button signup">Sign Up</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About the School Section -->
+    <section class="about-section">
+        <div class="about-container">
+            <div class="about-images">
+                <img src="{{ url_for('static', filename='image/hero.jpg') }}" alt="Medalists" class="main-image">
+                <img src="{{ url_for('static', filename='image/06.PNG') }}" alt="Star Student" class="small-image">
+            </div>
+            
+            <div class="about-text">Strength, Speed, and Success – On Your Terms</p>
+                <h1>KICKSTART YOUR <span class="highlight">KARATE </span> WITH US</h1>
+                <p>
+                    Champion Martial Arts LLC brings the art of Karate to Woodside, New York. Our classes are designed for all levels, from beginners to advanced students, offering a comprehensive approach to martial arts training.
+                </p>
+                <p>
+                    At Champion Martial Arts, it’s not just about learning kicks and punches—it’s about building strength, cultivating discipline, and developing a deeper sense of self-awareness. Join us and start your journey to becoming not only a skilled martial artist but a true champion in every aspect of life.
+                </p>
+                <a href="about.html" class="learn-more-btn">Learn More</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- YouTube Video Section -->
+    <section class="video-section">
+        <div class="container">
+            <h2>Watch Our Introduction Video</h2>
+            <iframe width="560" height="315" src="https://www.youtube.com/embed/K8uzqBTTx1g?si=njPzym7N9L2OE3ST" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+        </div>
+    </section>
+   <!-- Our Goals Section -->
+<section class="our-goals">
+    <div class="container">
+        <h2>Our Goals</h2>
+        <p>At Champion Martial Arts Club, our goals go beyond just teaching martial arts. We aim to help every student grow both physically and mentally, instilling values that last a lifetime.</p>
+        
+    <!-- List of Goals as a column -->
+        <div class="goal-list">
+            <div class="goal-item">
+                <strong>Discipline:</strong> We believe in teaching self-discipline that helps students excel both in the dojo and in their everyday lives.
+            </div>
+            <div class="goal-item">
+                <strong>Respect:</strong> Respect for oneself and others is a core value at our school. We foster an environment of mutual respect among students, instructors, and staff.
+            </div>
+            <div class="goal-item">
+                <strong>Fitness:</strong> Martial arts is an excellent way to stay fit and healthy. Our classes promote physical well-being and endurance.
+            </div>
+            <div class="goal-item">
+                <strong>Confidence:</strong> As students progress, they gain confidence in their abilities, which extends to all areas of their lives.
+            </div>
+            <div class="goal-item">
+                <strong>Community:</strong> We build a supportive community where everyone is encouraged to grow, learn, and achieve their personal best.
+            </div>
+        </div>
+    </div>
+</section>
+
+
+
+    <footer>
+        <div class="footer-container">
+            <div class="footer-section">
+                <h3>Master martial arts and fitness in Queens, New York</h3>
+                <img src="{{ url_for('static', filename='image/logo.jpg') }}" alt="Logo" class="logo">
+            </div>
+            <div class="footer-section">
+                <h4>Get In Touch</h4>
+                <p><strong>Phone:</strong> (646) 331-2876 </p>
+                <p><strong>Email:</strong> cmacusa21@gmail.com</p>
+                <p><strong>Address:</strong> 43-20 69th St, Queens, NY 11377</p>
+            </div>
+            <div class="footer-section">
+                <h4>Quicklinks</h4>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="trainers.html">Our Trainers</a></li>
+                    <li><a href="schedule.html">Class Schedule</a></li>
+                    <li><a href="contact.html">Contact Us</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h4>Open Hours</h4>
+                <p>Monday, Wednesday & Friday: 4:00PM - 5:00PM</p>
+                <p>Tuesday & Thursday: 4:00PM - 6:00PM</p>
+                <p>Saturday: 9:30AM - 12:00PM </p>
+                <p>Sunday: 11:00AM – 1:00PM</p>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>

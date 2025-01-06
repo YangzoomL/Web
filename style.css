@@ -1,0 +1,955 @@
+/* General Styles */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #000000;
+    height: 100%;  
+    overflow-x: hidden;
+    color: white;
+}
+
+.hero-section {
+    position: relative;
+    height: 100vh;
+    background-image: url('{{ url_for("static", filename="hero.jpg") }}');
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #fff;
+    text-align: center;
+    
+}
+
+.hero-section .overlay {
+    background-color: rgba(0, 0, 0, 0.5);
+    padding: 20px;
+    border-radius: 10px;
+}
+
+.hero-section h2 {
+    font-size: 24px;
+    margin: 0 0 10px;
+    font-weight: 300;
+}
+
+.hero-section h1 {
+    font-size: 48px;
+    margin: 0;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+.hero-section h1 span {
+    color: #ffcc00;
+}
+
+/* Navbar Styles */
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: rgb(255, 254, 254);  /* Semi-transparent background for navbar */
+    padding: 10px 20px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1;
+}
+
+nav .logo-container {
+    flex-grow: 0;
+}
+
+nav .logo {
+    width: auto;
+    height: 100px ;
+    padding-left: 50px;
+}
+
+nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+}
+
+nav ul li {
+    margin: 0 20px;
+}
+
+nav ul li a {
+    color: black;
+    font-weight: bold;
+    font-style: italic;
+    text-decoration: none;
+    font-size: 18px;
+    padding: 10px 15px;
+    display: inline-block;
+}
+
+nav ul li a:hover {
+    color: red;
+    border-radius: 5px;
+}
+
+/* Flash Message Styles */
+.alert {
+    padding: 15px;
+    margin: 10px 0;
+    border-radius: 5px;
+    font-size: 16px;
+    text-align: center;
+}
+
+.success {
+    background-color: #4CAF50;
+    color: white;
+}
+
+/* Main Content Section */
+.content {
+    
+    text-align: center;
+    padding: 100px 20px 50px;  /* Added top padding to prevent the content from being hidden under the navbar */
+    color: rgb(255, 0, 0);
+    z-index: 2;
+    font-size: 50px;
+    font-style: italic;
+    font-weight: bolder;
+}
+
+.call-button {
+    display: inline-block;
+    margin-top: 20px;
+    padding: 15px 25px;
+    background-color: #ff0000;
+    color: rgb(255, 255, 255);
+    text-decoration: none;
+    font-size: 18px;
+    border-radius: 5px;
+}
+
+.call-button:hover {
+    background-color: black;
+}
+
+/* Footer Styles */
+footer {
+    background-color: white;
+    color: black;
+    padding: 20px 10px;
+}
+
+.footer-container {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+
+.footer-section {
+    flex: 1;
+    margin: 10px;
+    min-width: 200px;
+}
+
+.footer-section h3, .footer-section h4 {
+    margin-bottom: 10px;
+    color: red;
+}
+
+.footer-section p, .footer-section ul {
+    margin: 5px 0;
+}
+
+.footer-section ul {
+    list-style: none;
+    padding: 0;
+}
+
+.footer-section ul li a {
+    color: black;
+    text-decoration: none;
+}
+
+.footer-section ul li a:hover {
+    text-decoration: underline;
+}
+
+.logo {
+    width: 100px;
+    margin-top: 10px;
+}
+.about-section {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 50px 20px;
+    background-color: #ffffff;
+    color: black
+}
+
+.about-container {
+    max-width: 1200px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.about-images {
+    position: relative;
+    width: max-content; 
+    margin: 0 auto; 
+}
+
+.about-images .main-image {
+    width: 500px; 
+   
+}
+
+.about-images .small-image {
+    position: absolute;
+    bottom: 5%; 
+    left: 5%; 
+    width: 120px;
+    
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.3); 
+}
+
+
+.about-text {
+    flex: 2;
+    padding: 20px;
+}
+
+.about-text .tagline {
+    color: red;
+    font-size: 14px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 10px;
+}
+
+.about-text h1 {
+    font-size: 36px;
+    margin: 0 0 20px;
+    line-height: 1.4;
+}
+
+.about-text h1 .highlight {
+    color: red;
+}
+
+.about-text p {
+    font-size: 16px;
+    line-height: 1.6;
+    margin: 10px 0;
+    color: black;
+}
+
+.learn-more-btn {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: red;
+    color: #fffcfc;
+    text-decoration: none;
+    font-weight: bold;
+    border-radius: 5px;
+    margin-top: 20px;
+    transition: background-color 0.3s;
+}
+
+.learn-more-btn:hover {
+    background-color: blue;
+}
+
+.back_image {
+    background-size: cover; 
+    background-position: center; 
+    background-repeat: no-repeat; 
+    padding-top: 200px;
+    width: 100%;
+    height: 100vh; 
+}
+
+
+.founder-section {
+    background-color: #000000;
+    padding: 50px 20px;
+  
+  }
+
+  .founder-content {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 30px;
+    align-items: center;
+  }
+
+  .founder-image img {
+   
+    width: 200px;
+    height: auto;
+    object-fit: cover;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+
+  .founder-bio {
+    max-width: 600px;
+    text-align: left;
+  }
+
+  .founder-bio h2 {
+    font-size: 2rem;
+    color: red;
+    margin-bottom: 20px;
+  }
+
+  .founder-bio p {
+    font-size: 1.1rem;
+    color: #ffffff;
+    line-height: 1.6;
+  }
+
+  .founder-quote {
+    background-color: #ecf0f1;
+    padding: 30px;
+    margin-top: 40px;
+    text-align: center;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    font-style: italic;
+  }
+
+  .founder-quote blockquote {
+    font-size: 1.3rem;
+    color: #7f8c8d;
+    margin-bottom: 15px;
+    line-height: 1.6;
+  }
+
+  .founder-quote p {
+    font-size: 1rem;
+    font-weight: bold;
+    color: #2c3e50;
+  }
+
+  /* Responsive Design */
+  @media (max-width: 768px) {
+
+  .founder-content {
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .founder-image img {
+      width: 150px;
+      height: 150px;
+    }
+
+    .founder-bio h2 {
+      font-size: 1.8rem;
+    }
+
+    .founder-bio p {
+      font-size: 1rem;
+    }
+  }
+
+/* Booking Section */
+.booking-section {
+    background-color: #f7f7f7;
+    padding: 60px 20px;
+    text-align: center;
+}
+
+.booking-container {
+    max-width: 800px;
+    margin: 0 auto;
+    background-color: #fff;
+    border-radius: 8px;
+    padding: 40px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.booking-container h2 {
+    color: #333;
+    margin-bottom: 20px;
+    font-size: 2rem;
+}
+
+.booking-container p {
+    color: #555;
+    font-size: 1rem;
+    margin-bottom: 30px;
+}
+
+.booking-form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.booking-form .form-group {
+    margin-bottom: 20px;
+    width: 100%;
+    max-width: 400px;
+}
+
+.booking-form label {
+    display: block;
+    margin-bottom: 5px;
+    color: #333;
+    font-size: 1rem;
+}
+
+.booking-form input,
+.booking-form select {
+    width: 100%;
+    padding: 10px;
+    font-size: 1rem;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}
+
+.booking-form button {
+    padding: 12px 20px;
+    background-color: #3498db;
+    color: white;
+    font-size: 1.2rem;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.booking-form button:hover {
+    background-color: #2980b9;
+}
+
+
+
+.about-us {
+    position: relative;
+    height: 100vh;
+    background-image: url(/static/image/about.jpg); 
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;  /* This makes the background fixed */
+    background-repeat: no-repeat;  /* Prevents the background from repeating */
+}
+
+.background-image {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: white;
+    background: rgba(0, 0, 0, 0.5); 
+}
+
+.background-image h1 {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+}
+
+.background-image p {
+    font-size: 1.5rem;
+    margin-bottom: 2rem;
+}
+.cta-buttons {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    margin-top: 2rem;
+}
+
+.cta-button {
+    text-decoration: none;
+    background-color:red;
+    color: white;
+    padding: 12px 25px;
+    font-size: 1.2rem;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+    text-align: center;
+}
+
+.cta-button:hover {
+    background-color: #0056b3;
+}
+
+.signup {
+    background-color: blue;
+}
+
+.signup:hover {
+    background-color: red;
+}
+/* About the School Section */
+.school-about {
+    background-color: #fff;
+    color: #000000;
+    padding: 4rem 2rem;
+    text-align: center;
+}
+
+.school-about h2 {
+    font-size: 2.5rem;
+    margin-bottom: 1.5rem;
+}
+
+.school-about p {
+    font-size: 1.25rem;
+    line-height: 1.6;
+    margin-bottom: 1rem;
+}
+
+/* Our Goals Section */
+.our-goals {
+    background-color: #ffffff; 
+    padding: 4rem 2rem;
+    text-align: center;
+    border-bottom: 2px solid red;
+
+}
+
+.our-goals h2 {
+    font-size: 2.5rem;
+    margin-bottom: 1.5rem;
+    color: #000000;
+}
+
+.our-goals p {
+    font-size: 1.25rem;
+    line-height: 1.6;
+    margin-bottom: 2rem;
+    color: #000000;
+}
+
+/* Goal List Styling */
+.goal-list {
+    display: flex;
+    flex-direction: column; /* Align items in a column */
+    justify-content: center; /* Center items vertically */
+    align-items: center; /* Center items horizontally */
+    gap: 1.5rem; /* Add spacing between goal items */
+    max-width: 800px; /* Limit width to prevent stretching */
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* Goal Item Styling */
+.goal-item {
+    font-size: 1.2rem;
+    color: #333;
+    text-align: left;
+    padding: 10px 20px;
+    background-color: #ffffff;
+    border-radius: 5px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Hover effect for goal items */
+.goal-item:hover {
+    transform: translateY(-5px); /* Slight lift effect */
+    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.15); /* Add shadow on hover */
+}
+
+.goal-item strong {
+    font-weight: bold;
+}
+
+
+/* Video Section */
+.video-section {
+    background-color: black;
+    padding: 4rem 2rem;
+    text-align: center;
+}
+
+.video-section h2 {
+    font-size: 2.5rem;
+    margin-bottom: 1.5rem;
+}
+
+iframe {
+    width: 100%;
+    max-width: 900px;
+    height: 500px;
+    border: none;
+}
+
+
+/* Cover Section with Fixed Background */
+.cover-section {
+    position: relative;
+    height: 100vh;
+    background-image: url(/static/image/back.jpg); 
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;  
+    background-repeat: no-repeat;  
+    
+}
+.background-image {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        color: white;
+        background: rgba(0, 0, 0, 0.5); 
+    }
+
+.cover-section h1 {
+    font-size: 4rem;
+    margin-bottom: 10px;
+}
+
+.cover-section p {
+    font-size: 1.5rem;
+    margin-bottom: 30px;
+}
+
+.buttons {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    margin-top: 2rem;
+}
+
+.button {
+    text-decoration: none;
+    background-color:red;
+    color: white;
+    padding: 12px 25px;
+    font-size: 1.2rem;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+    text-align: center;
+}
+
+.button:hover {
+    background-color: #0056b3;
+}
+
+.signup {
+    background-color: blue;
+}
+
+.signup:hover {
+    background-color: red;
+}
+
+/* Instructors Section */
+.instructors-section {
+    background-color: #f9f9f9;
+    padding: 4rem 2rem;
+    text-align: center;
+    color: #000000;
+}
+
+.instructors-section h2 {
+    font-size: 2.5rem;
+    margin-bottom: 1.5rem;
+}
+
+.trainer-container {
+    display: flex;
+    justify-content: space-around;
+    gap: 2rem;
+    flex-wrap: wrap;
+    margin-top: 3rem;
+}
+
+.trainer-profile {
+    background-color: white;
+    width: 45%;
+    padding: 2rem;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+.trainer-photo {
+    width: 100%;
+    height: auto;
+    border-radius: 50%;
+    margin-bottom: 20px;
+}
+
+.trainer-profile h3 {
+    font-size: 1.8rem;
+    margin-bottom: 10px;
+}
+
+.trainer-profile p {
+    font-size: 1.1rem;
+    color: #555;
+    line-height: 1.6;
+}
+
+.contact-button {
+    display: inline-block;
+    background-color: #28a745;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 5px;
+    text-decoration: none;
+    margin-top: 20px;
+    font-size: 1.1rem;
+    transition: background-color 0.3s ease;
+}
+
+.contact-button:hover {
+    background-color: #218838;
+}
+
+/* Social Media Section */
+.social-media-section {
+    background-color: black;
+    padding: 3rem 2rem;
+    text-align: center;
+}
+
+.social-media-section h2 {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+}
+
+.social-links {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+.social-link {
+    font-size: 1.3rem;
+    color: #333;
+    text-decoration: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    border: 2px solid #333;
+    transition: all 0.3s ease;
+}
+
+.social-link.facebook {
+    background-color: #3b5998;
+    color: white;
+}
+
+.social-link.instagram {
+    background-color: #e4405f;
+    color: white;
+}
+
+.social-link:hover {
+    opacity: 0.8;
+}
+
+/* Contact Section */
+.contact-section {
+    padding-top: 150px;
+    text-align: center;
+    background-color: #f9f9f9;
+    color: #000000;
+}
+
+.contact-section h2 {
+    font-size: 2.5rem;
+    margin-bottom: 10px;
+}
+
+.contact-section p {
+    font-size: 1.2rem;
+    color: #555;
+    margin-bottom: 3rem;
+}
+
+/* Contact Form Styles */
+.contact-form {
+    max-width: 1000px;
+    margin: 0 auto;
+    background-color: #fff;
+    padding-top: 2rem;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.contact-form .form-group {
+    margin-bottom: 1.5rem;
+    text-align: left;
+}
+
+.contact-form label {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 0.5rem;
+}
+
+.contact-form input,
+.contact-form textarea {
+    width: 70%;
+    padding-right: 70px;
+    border: 1px solid gray;
+    border-radius: 5px;
+    font-size: 1rem;
+}
+
+.contact-form textarea {
+    height: 150px;
+}
+
+.contact-form .form-submit {
+    text-align: center;
+}
+
+.submit-button {
+    background-color: #f50000;
+    color: white;
+    font-size: 1.1rem;
+    padding: 12px 30px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.submit-button:hover {
+    background-color: #218838;
+}
+
+/* Location Section */
+.location-section {
+    padding: 4rem 2rem;
+    text-align: center;
+    background-color: #000000;
+}
+
+.map-container iframe {
+    width: 100%;
+    height: 400px;
+    border: 0;
+    border-radius: 10px;
+}
+
+/* Contact Information Section */
+.contact-info-section {
+    padding: 4rem 2rem;
+    text-align: center;
+    background-color: #ffffff;
+    color:#000000;
+    border-bottom: 2px solid red;
+}
+
+.contact-details {
+    display: flex;
+    justify-content: space-around;
+    margin-top: 2rem;
+    flex-wrap: wrap;
+}
+
+.contact-detail {
+    width: 30%;
+    padding: 1rem;
+    background-color: white;
+    border-radius: 5px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    text-align: left;
+}
+
+.contact-detail h3 {
+    margin-bottom: 1rem;
+}
+
+.contact-detail p {
+    font-size: 1rem;
+}
+
+.contact-detail a {
+    color: #007bff;
+    text-decoration: none;
+}
+
+.contact-detail a:hover {
+    text-decoration: underline;
+}
+
+.flash-messages {
+    list-style: none;
+    padding: 100px;
+}
+
+.flash-message {
+    background-color: #d4edda;
+    color: #155724;
+    padding: 10px;
+    border-radius: 5px;
+    margin-top: 10px;
+}
+
+.flash-message.error {
+    background-color: #f8d7da;
+    color: #721c24;
+}
+
+.schedule-section {
+    background-color:black;
+    padding: 40px 20px;
+    text-align: center;
+    padding-top: 150px; 
+}
+
+.schedule-section h1 {
+    font-size: 2.5em;
+    color: #2c3e50;
+    margin-bottom: 30px;
+}
+
+/* Class Schedule Table */
+.class-schedule {
+    width: 100%;
+    margin-top: 30px;
+    border-collapse: collapse;
+    border: 1px solid #ddd;
+}
+
+.class-schedule th, .class-schedule td {
+    padding: 15px;
+    text-align: left;
+    border: 1px solid #ddd;
+}
+
+.class-schedule th {
+    background-color: #2c3e50;
+    color: white;
+}
+
+.class-schedule tr:nth-child(even) {
+    background-color: #000000;
+}
+
+.class-schedule tr:hover {
+    background-color: red;
+}
