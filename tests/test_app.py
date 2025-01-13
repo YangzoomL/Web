@@ -17,7 +17,6 @@ def test_index(client):
     assert b"Home" in response.data
 
 
-
 def test_bookings(client):
     """Test the bookings page."""
     response = client.get("/book")
