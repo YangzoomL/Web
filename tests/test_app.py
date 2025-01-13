@@ -14,10 +14,11 @@ def test_index(client):
     """Test the homepage."""
     response = client.get("/")
     assert response.status_code == 200
-    assert b"Welcome" in response.data  # Check if "Welcome" text is in the response
+    assert b"Home" in response.data
+
 
 
 def test_bookings(client):
     """Test the bookings page."""
-    response = client.get("/bookings")
+    response = client.get("/book")
     assert response.status_code == 200
