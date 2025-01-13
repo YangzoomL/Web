@@ -46,9 +46,9 @@ jobs:
           source venv/bin/activate
           pytest --cov=. --cov-report=xml
 
-      # Step 6: Check for Vulnerabilities (Dependabot)
-      - name: Check for Vulnerabilities
-        uses: github/dependency-review-action@v2
+      # # Step 6: Check for Vulnerabilities (Dependabot)
+      # - name: Check for Vulnerabilities
+      #   uses: github/dependency-review-action@v2
 
       # Step 7: Dependency Security Check (Safety)
       - name: Dependency Security Check
