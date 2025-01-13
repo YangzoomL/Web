@@ -24,23 +24,56 @@ jobs:
         with:
           python-version: '3.10'
 
-      # Step 3: Install Dependencies
-      - name: Install Dependencies
+      # Step 3: Cache Dependencies
+      - name: Cache pip dependencies
+        uses: actions/cache@v3
+        with:
+          path: ~/.cache/pip
+          key: ${{ runner.os }}-pip-${{ hashFiles('requirements*.txt') }}
+          restore-keys: |
+            ${{ runner.os }}-pip-
+
+      # Step 4: Install Development Dependencies
+      - name: Install Development Dependencies
         run: |
           python -m venv venv
           source venv/bin/activate
-          pip install -r requirements.txt
+          pip install -r requirements-dev.txt
 
-      # Step 4: Run Tests with Coverage
+      # Step 5: Run Tests with Coverage
       - name: Run Tests with Coverage
         run: |
           source venv/bin/activate
           pytest --cov=. --cov-report=xml
 
-      # # Step 5: Upload Coverage to Codecov
-      # - name: Upload Coverage to Codecov
-      #   uses: codecov/codecov-action@v3
-      #   with:
-      #     files: ./coverage.xml
-      #     flags: unittests       # Optional flag to identify the report
-      #     name: CI Coverage      # Name of the coverage report
+      # Step 6: Check for Vulnerabilities (Dependabot)
+      - name: Check for Vulnerabilities
+        uses: github/dependency-review-action@v2
+
+      # Step 7: Dependency Security Check (Safety)
+      - name: Dependency Security Check
+        run: |
+          source venv/bin/activate
+          pip install safety
+          safety check --full-report
+
+      # Step 8: Static Code Security Scan (Bandit)
+      - name: Security Scan with Bandit
+        run: |
+          source venv/bin/activate
+          pip install bandit
+          bandit -r .
+
+      # Step 9: Check Code Formatting with Black
+      - name: Run Black
+        run: |
+          source venv/bin/activate
+          black --check .
+
+      # Step 10: Upload Coverage to Codecov (Optional)
+      - name: Upload Coverage to Codecov
+        uses: codecov/codecov-action@v3
+        with:
+          files: ./coverage.xml
+          flags: unittests       # Optional flag to identify the report
+          name: CI Coverage      # Name of the coverage report
