@@ -31,8 +31,16 @@ jobs:
           source venv/bin/activate
           pip install -r requirements.txt
 
-      # Step 4: Run Tests
-      - name: Run Tests
+      # Step 4: Run Tests with Coverage
+      - name: Run Tests with Coverage
         run: |
           source venv/bin/activate
-          pytest
+          pytest --cov=. --cov-report=xml
+
+      # Step 5: Upload Coverage to Codecov
+      - name: Upload Coverage to Codecov
+        uses: codecov/codecov-action@v3
+        with:
+          files: ./coverage.xml
+          flags: unittests       # Optional flag to identify the report
+          name: CI Coverage      # Name of the coverage report
