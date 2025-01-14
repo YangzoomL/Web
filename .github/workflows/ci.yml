@@ -50,7 +50,7 @@ jobs:
         run: |
           source venv/bin/activate
           safety check --full-report
-          bandit -r . --exclude venv,tests,static,templates
+          bandit -r . --exclude ./venv,./tests,./static,./templates
 
       # Step 7: Run tests with coverage
       - name: Run Tests
