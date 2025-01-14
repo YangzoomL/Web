@@ -1,0 +1,12 @@
+version: 2
+updates:
+  # Specify the dependency ecosystem (e.g., pip for Python)
+  - package-ecosystem: pip
+    directory: /  # Location of dependency files (e.g., requirements.txt)
+    schedule:
+      interval: weekly  # Check for updates weekly
+    commit-message:
+      prefix: "fix(deps)"  # Prefix for the PR title
+    ignore:
+      - dependency-name: flask  # Example: Ignore updates for a specific dependency
+    open-pull-requests-limit: 5  # Limit the number of open PRs Dependabot creates

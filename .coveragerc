@@ -1,0 +1,10 @@
+[run]
+# Include only Python files in the root directory
+source =
+    .
+
+# Exclude specific files or directories
+omit =
+    */tests/*
+    */templates/*
+    */static/*

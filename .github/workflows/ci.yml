@@ -1,20 +1,18 @@
 name: CI Pipeline
 
 on:
-  push:
+  pull_request:
     branches:
       - main
-      - '**' # Trigger on any branch push
-  pull_request:
+  push:
     branches:
       - main
 
 jobs:
   build-and-test:
     runs-on: ubuntu-latest
-
     steps:
-      # Step 1: Check out the code
+      # Step 1: Check out the repository
       - name: Checkout Code
         uses: actions/checkout@v3
 
@@ -24,15 +22,38 @@ jobs:
         with:
           python-version: '3.10'
 
-      # Step 3: Install Dependencies
+      # Step 3: Cache pip dependencies
+      - name: Cache pip dependencies
+        uses: actions/cache@v3
+        with:
+          path: ~/.cache/pip
+          key: ${{ runner.os }}-pip-${{ hashFiles('requirements*.txt') }}
+          restore-keys: |
+            ${{ runner.os }}-pip-
+
+      # Step 4: Install dependencies in a virtual environment
       - name: Install Dependencies
         run: |
           python -m venv venv
           source venv/bin/activate
-          pip install -r requirements.txt
+          pip install --upgrade pip
+          pip install -r requirements-dev.txt
 
-      # Step 4: Run Tests
+      # Step 5: Lint the code with Black
+      - name: Run Black
+        run: |
+          source venv/bin/activate
+          black --check .
+
+      # Step 6: Perform security scans
+      - name: Security Scan
+        run: |
+          source venv/bin/activate
+          safety check --full-report
+          bandit -r . --exclude ./venv,./tests,./static,./templates
+
+      # Step 7: Run tests with coverage
       - name: Run Tests
         run: |
           source venv/bin/activate
-          pytest
+          pytest --cov=. --cov-report=xml
